@@ -3,6 +3,12 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://127.0.0.1:27017/stockManagementService').then(() => {
+    conssole.log('Connected to MongoDB successfully');
+}).catch( err => {
+    console.error(err);
+});
+
 app.set('views', path.join(__dirname, 'views'));
 
 
